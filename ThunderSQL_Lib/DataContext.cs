@@ -20,7 +20,7 @@ namespace ThunderSQL
         /// <summary>
         /// Creates a new transactional data context to connection string named "Default".
         /// </summary>
-        public DataContext() : this(null, Transaction.Yes) { }
+        public DataContext() : this(null, Transaction.No) { }
 
         /// <summary>
         /// Creates a new data context to connection string named "Default". 

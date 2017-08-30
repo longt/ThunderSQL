@@ -11,11 +11,11 @@ namespace ThunderSQL
     {
         static void Main(string[] args)
         {
-            var context = new DataContext(Transaction.No);
+            var context = new DataContext();
 
             var insertParams = new { ID = 11, Name = "BMW" };  //匿名类
 
-            int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (49, 'BMW')");
+            int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)",11,"hello");
 
             Console.WriteLine("End:{0}", n);
 
