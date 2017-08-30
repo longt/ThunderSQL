@@ -48,9 +48,9 @@ car_id(int)     car_name(nvarchar)      car_num(int)
 用于获取查询结果中第一行第一列数据，为数据库查询中常用操作之一。
 
 ```c#
- var context = new DataContext(); 
- string sql = "select car_name from cars where car_id=14"; 
- var value = context.GetValue(sql);	
+            var context = new DataContext(); 
+            string sql = "select car_name from cars where car_id=14"; 
+            var value = context.GetValue(sql);	
 ```
 
 
@@ -58,7 +58,7 @@ car_id(int)     car_name(nvarchar)      car_num(int)
 获取查询结果的IDataReader对象，可获取相关查询结果的临时表所有数据。
  
 ```c#
-			var context = new DataContext();
+            var context = new DataContext();
             string sql = "select * from cars";
             IDataReader reader = context.Query(sql);
             Console.WriteLine("字段数量：{0}", reader.FieldCount);
@@ -96,7 +96,7 @@ car_id(int)     car_name(nvarchar)      car_num(int)
 	
 **DataTable格式读取:GetDataTable()**
 ```c#
-			var context = new DataContext();
+            var context = new DataContext();
             string sql = "select * from cars";
             DataTable dt = context.GetDataTable(sql);
             foreach (DataRow dr in dt.Rows)
@@ -135,12 +135,12 @@ hello
 **List<T> 格式读取：GetList()**
 自定义类，字段与数据库表结构对应
 ```c#
-    class Car
-    {
-        public int car_id { get; set; }
-        public string car_name { get; set; }
-        public string car_num { get; set; }
-    }
+            class Car
+            {
+            	public int car_id { get; set; }
+            	public string car_name { get; set; }
+            	public string car_num { get; set; }
+            }
 ```
 主函数内代码：
 ```c#
