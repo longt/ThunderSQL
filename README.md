@@ -16,7 +16,7 @@ v1.0：
 
 当然也可以配置其余数据库，配置如下：
 
-```
+```xml
  <connectionStrings>
         <add name="Default" providerName="System.Data.SqlClient" connectionString="..." />
         <add name="Other" providerName="System.Data.OracleClient" connectionString="..." />
@@ -31,7 +31,7 @@ v1.0：
 
 - 读数据库：GetValue()
 
-```
+```c#
  var context = new DataContext(); 
  string sql = "select car_name from cars where car_id=14"; 
  var value = context.GetValue(sql);//返回第一行第一列数据;	
@@ -40,7 +40,7 @@ v1.0：
 	
 - 写数据库：Execute()
 
-```
+```c#
  var context = new DataContext();  
  var insertParams = new { ID = 14, Name = "BMWaaaa" };  //匿名类 
  int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)", insertParams.ID, insertParams.Name); 
