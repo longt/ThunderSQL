@@ -30,15 +30,21 @@ v1.0：
 
 
 - 读数据库：GetValue()
-           var context = new DataContext(); 
-           string sql = "select car_name from cars where car_id=14"; 
-           var value = context.GetValue(sql);//返回第一行第一列数据;	
- 
+
+```
+ var context = new DataContext(); 
+ string sql = "select car_name from cars where car_id=14"; 
+ var value = context.GetValue(sql);//返回第一行第一列数据;	
+```
 
 	
 - 写数据库：Execute()
 
-           var context = new DataContext();  
-           var insertParams = new { ID = 14, Name = "BMWaaaa" };  //匿名类 
-           int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)", insertParams.ID, insertParams.Name); 
-           Console.WriteLine("End:{0}", n);            //返回更新的行数
+```
+ var context = new DataContext();  
+ var insertParams = new { ID = 14, Name = "BMWaaaa" };  //匿名类 
+ int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)", insertParams.ID, insertParams.Name); 
+ Console.WriteLine("End:{0}", n);            //返回更新的行数
+```
+
+后续持续更新...
