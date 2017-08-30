@@ -11,15 +11,24 @@ namespace ThunderSQL
     {
         static void Main(string[] args)
         {
-            var context = new DataContext();
 
-            var insertParams = new { ID = 11, Name = "BMW" };  //匿名类
+            //1、写数据库
+            /*
+                        var context = new DataContext(); 
+                        string sql = "select car_name from cars where car_id=15"; 
+                        var value = context.GetValue(sql);//返回第一行第一列数据;
+                       if (value == null)
+                           Console.WriteLine("yes");
+                       else
+                            Console.WriteLine(value);
+           */
 
-            int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)",11,"hello");
-
-            Console.WriteLine("End:{0}", n);
-
-            //增、删、查、改 
+            //2、写数据库
+            var context = new DataContext();  
+            var insertParams = new { ID = 14, Name = "BMWaaaa" };  //匿名类 
+            int n = context.Execute("INSERT INTO Cars(car_id,car_name) VALUES (@0, @1)", insertParams.ID, insertParams.Name); 
+            Console.WriteLine("End:{0}", n);            //返回更新的行数
+             
 
         }
     }
