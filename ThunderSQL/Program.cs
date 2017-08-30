@@ -45,9 +45,9 @@ namespace ThunderSQL
             //var context = new DataContext();
             //string sql = "select * from cars";
             //DataTable dt = context.GetDataTable(sql);
-            //foreach(DataRow dr in dt.Rows)
+            //foreach (DataRow dr in dt.Rows)
             //{
-            //    Console.WriteLine(dr["car_id"].ToString());
+            //    Console.WriteLine("{0}:{1}",dr["car_id"].ToString(),dr["car_name"].ToString());
             //}
 
             //----------------------------------------------------------------------
@@ -56,7 +56,7 @@ namespace ThunderSQL
             //var context = new DataContext();
             //string sql = "select car_name from cars";
             //List<string> list = context.GetList(sql);
-            //foreach(string item in list)
+            //foreach (string item in list)
             //{
             //    Console.WriteLine(item);
             //}
@@ -65,39 +65,39 @@ namespace ThunderSQL
 
             //5、读取List<T>，T的属性值与数据库字段需要对应
 
-            //var context = new DataContext();
-            //string sql = "select * from cars";
-            //List<Car> list = context.GetList<Car>(sql);
-            //foreach (Car item in list)
-            //{
-            //    Console.WriteLine("{0},{1}", item.car_id, item.car_name);
-            //}
-
-            /* 6、遍历 */
             var context = new DataContext();
             string sql = "select * from cars";
-            IDataReader reader = context.Query(sql);
-            Console.WriteLine("字段数量：{0}", reader.FieldCount);
-            for (int i = 0; i < reader.FieldCount; i++)
+            List<Car> list = context.GetList<Car>(sql);
+            foreach (Car item in list)
             {
-                Console.Write("{0}({1})", reader.GetName(i), reader.GetDataTypeName(i));
-                if (i < reader.FieldCount - 1)
-                    Console.Write("\t");
-                else
-                    Console.Write("\n");
+                Console.WriteLine("{0},{1}", item.car_id, item.car_name);
+            }
 
-            }
-            while (reader.Read())
-            {
-                for (int i = 0; i < reader.FieldCount; i++)
-                {
-                    Console.Write("{0}", reader[i].ToString());
-                    if (i < reader.FieldCount - 1)
-                        Console.Write("\t\t");
-                    else
-                        Console.Write("\n");
-                }
-            }
-        } 
+            /* 6、遍历 */
+            //var context = new DataContext();
+            //string sql = "select * from cars";
+            //IDataReader reader = context.Query(sql);
+            //Console.WriteLine("字段数量：{0}", reader.FieldCount);
+            //for (int i = 0; i < reader.FieldCount; i++)
+            //{
+            //    Console.Write("{0}({1})", reader.GetName(i), reader.GetDataTypeName(i));
+            //    if (i < reader.FieldCount - 1)
+            //        Console.Write("\t");
+            //    else
+            //        Console.Write("\n");
+
+            //}
+            //while (reader.Read())
+            //{
+            //    for (int i = 0; i < reader.FieldCount; i++)
+            //    {
+            //        Console.Write("{0}", reader[i].ToString());
+            //        if (i < reader.FieldCount - 1)
+            //            Console.Write("\t\t");
+            //        else
+            //            Console.Write("\n");
+            //    }
+            //}
+        }
     }
 }
