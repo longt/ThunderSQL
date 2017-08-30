@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderSQL", "ThunderSQL\ThunderSQL.csproj", "{1884F98A-C2B8-4287-A723-B9C2C680578E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderSQL_Lib", "ThunderSQL_Lib\ThunderSQL_Lib.csproj", "{10C7509E-667A-4247-8F9C-36B6FE7BD495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderSQL_WebTest", "ThunderSQL_WebTest\ThunderSQL_WebTest.csproj", "{0B9DA15E-E603-4333-A69D-1F978D8D2900}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{10C7509E-667A-4247-8F9C-36B6FE7BD495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C7509E-667A-4247-8F9C-36B6FE7BD495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C7509E-667A-4247-8F9C-36B6FE7BD495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9DA15E-E603-4333-A69D-1F978D8D2900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9DA15E-E603-4333-A69D-1F978D8D2900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9DA15E-E603-4333-A69D-1F978D8D2900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9DA15E-E603-4333-A69D-1F978D8D2900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
